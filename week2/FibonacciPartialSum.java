@@ -1,4 +1,4 @@
-package week2;
+//package week2;
 import java.util.*;
 
 public class FibonacciPartialSum {
@@ -21,11 +21,15 @@ public class FibonacciPartialSum {
     }
 	
     private static long getFibonacciPartialSumNaive(long from, long to) {
-     
+        if(from==0){
+        	long sum1 = 0;
+        	long sum2 = getFibonacciSumLast(to);
+        	   return ((sum2-sum1)+10)%10;
+        	
+        }
         long sum1 = getFibonacciSumLast(from-1);
         long sum2 = getFibonacciSumLast(to);
         return ((sum2-sum1)+10)%10;
-        
     }
     
     public static void main(String[] args) {
